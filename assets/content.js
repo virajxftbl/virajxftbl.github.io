@@ -11,17 +11,17 @@ window.PORTFOLIO_DEFAULT_CONTENT = {
     brandInitials: "VX",
     title: "Football edit artist. After Effects × Blender.",
     location: "Gurugram, India",
-    email: "",       // e.g. "virajxftbl@gmail.com"
-    whatsapp: "",    // e.g. "+91 98xxxxxxxx"
-    instagram: "",   // e.g. "https://instagram.com/virajxftbl"
+    email: "virajvirvij@gmail.com",
+    whatsapp: "+91 98997 22233",
+    instagram: "https://www.instagram.com/virajxftbl/",
     youtube: "https://www.youtube.com/@virajxftbl/shorts",
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/viraj-vir-vij-310011332/",
     github: "",
     resumeUrl: "",
     logoUrl: "",
     intro: "Flashy football edits built frame by frame. Beat-synced cuts, velocity, heavy transitions and 3D moments made in Blender, finished in After Effects.",
     about: "I'm Viraj, the editor behind virajxftbl. I make football edits that hit on every beat: fast cuts, shakes, flashes, colour and 3D scenes that keep people watching to the last frame. I model and animate in Blender, then comp everything in After Effects, so every edit can mix clean 2D motion with custom 3D.",
-    contactLine: "Open for football edits, player highlight edits, fan page content and 3D intros. Send your clips and the vibe you want."
+    contactLine: "Open for football edits, player highlight edits, fan page content and 3D intros. Send your clips and the vibe you want. Email virajvirvij@gmail.com or WhatsApp +91 98997 22233."
   },
   hero: {
     eyebrow: "Football × Motion × 3D",
