@@ -1,28 +1,12 @@
-# Swayam's Personal Portfolio & Developer Space 🚀
+# virajxftbl — Portfolio
 
-Welcome to my personal developer portfolio! This repository hosts the source code for my interactive resume and project showcase, built as a blazing-fast, static web application.
+Football edits in After Effects × Blender. Live at **https://monkeyboyval.github.io**
 
-## 🌟 Live Demo
-**[swymwrld.github.io](https://swymwrld.github.io)**
+## Edit the site
+Everything (text, links, videos, Blender models) lives in `assets/content.js`. Change it, commit, and GitHub Pages updates in about a minute.
 
-## 💻 Tech Stack
-- **Frontend**: HTML5, CSS3, Vanilla JavaScript
-- **Deployment**: GitHub Pages / Vercel
-- **Content Management**: Localized JSON architecture with an integrated Admin Dashboard.
+- Videos: add/remove entries in `videos` (any YouTube Shorts link works).
+- Blender: export **File → Export → glTF 2.0 (.glb)**, drop it in `assets/models/`, and set `fileUrl` on a `models` entry.
+- Contact: fill `email`, `whatsapp`, `instagram` in `profile`.
 
-## 🛠️ Features
-- **Dynamic Content**: Powered by a custom JSON structure (`content.js`), allowing instant updates without touching HTML.
-- **Admin Dashboard**: Includes a secure `admin.html` interface (prototype passcode: `collision-lab`) to edit the portfolio's content locally via `localStorage`.
-- **Media Optimized**: Strategically built to handle 3D `.glb` previews, YouTube unlisted embeds, and compressed web assets without hitting host limits.
-
-## 🚀 Local Setup
-Want to run this locally or fork it?
-1. Clone the repository.
-2. Open `index.html` in your favorite browser.
-3. To edit the content, open `admin.html`, make your changes, and hit **Export JSON**. Replace the `assets/content.js` with your exported file!
-
-## 📬 Connect with me
-- GitHub: [@swymwrld](https://github.com/swymwrld)
-
----
-*Built with ❤️ by Swayam*
+Design forked from [swymwrld.github.io](https://swymwrld.github.io) by Swayam Kavlekar.
