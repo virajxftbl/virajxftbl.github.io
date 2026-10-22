@@ -1235,6 +1235,12 @@
     setText('nav-music',   n.music      || (fb.nav && fb.nav.music)      || 'Music');
     setText('nav-about',   n.about      || (fb.nav && fb.nav.about)      || 'About');
     setText('nav-contact', n.contactBtn || (fb.nav && fb.nav.contactBtn) || 'Contact');
+    /* Hide nav links for hidden sections */
+    var hv = data.sectionVisibility || {};
+    ['work','lab','studio','music','about'].forEach(function (k) {
+      var a = $id('nav-' + k);
+      if (a && hv[k] === false) a.style.display = 'none';
+    });
 
     /* Work section */
     var sw = s.work || {};

@@ -67,17 +67,16 @@ window.PORTFOLIO_DEFAULT_CONTENT = {
     }
   },
   // Hide sections you don't use
-  sectionVisibility: { music: false, lyrics: false },
+  sectionVisibility: { music: false, lyrics: false, work: false },
 
   stats: [
-    { label: "Top Edits", value: "10" },
-    { label: "Format", value: "9:16" },
-    { label: "Software", value: "AE" },
-    { label: "3D", value: "Blender" }
+    { label: "After Effects", value: "4 Yrs" },
+    { label: "Blender", value: "1 Yr" }
   ],
   tags: [
     "Football Edits", "After Effects", "Blender", "3D",
-    "Transitions", "Velocity", "Color Grading", "Shorts"
+    "Transitions", "Velocity", "Color Grading", "Shorts",
+    "Adaptable to Any Style", "Reliable"
   ],
   marqueeItems: [
     "Football Edits", "After Effects", "Blender", "Velocity",
