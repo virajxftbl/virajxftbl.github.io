@@ -154,18 +154,18 @@ window.PORTFOLIO_DEFAULT_CONTENT = {
       thumbnail: "https://i.ytimg.com/vi/3YTwTPXSIdg/oardefault.jpg"
     }
   ],
-  // Your top 10 edits — add a title to each (e.g. "Vini Jr — Sweater Weather")
+  // Your top edits — swap titles or links any time
   videos: [
-    { id: "v1",  title: "Edit 01", type: "Short", url: "https://www.youtube.com/shorts/b7UxYfAmpKQ", fileUrl: "", thumbnail: "", description: "" },
-    { id: "v2",  title: "Edit 02", type: "Short", url: "https://www.youtube.com/shorts/3YTwTPXSIdg", fileUrl: "", thumbnail: "", description: "" },
-    { id: "v3",  title: "Edit 03", type: "Short", url: "https://www.youtube.com/shorts/opsPd2fpyaY", fileUrl: "", thumbnail: "", description: "" },
+    { id: "v1",  title: "Messi — The GOAT", type: "Short", url: "https://www.youtube.com/shorts/b7UxYfAmpKQ", fileUrl: "", thumbnail: "", description: "" },
+    { id: "v2",  title: "The Aliens", type: "Short", url: "https://www.youtube.com/shorts/3YTwTPXSIdg", fileUrl: "", thumbnail: "", description: "" },
+    { id: "v3",  title: "Greatest in Every Aspect", type: "Short", url: "https://www.youtube.com/shorts/opsPd2fpyaY", fileUrl: "", thumbnail: "", description: "" },
     { id: "v4",  title: "Smooth Operator", type: "Short", url: "https://www.youtube.com/shorts/lMsHEEYeM9M", fileUrl: "", thumbnail: "", description: "" },
-    { id: "v5",  title: "Edit 05", type: "Short", url: "https://www.youtube.com/shorts/pjkjFGyyP8U", fileUrl: "", thumbnail: "", description: "" },
-    { id: "v6",  title: "Edit 06", type: "Short", url: "https://www.youtube.com/shorts/zt97QLFfoek", fileUrl: "", thumbnail: "", description: "" },
-    { id: "v7",  title: "Edit 07", type: "Short", url: "https://www.youtube.com/shorts/mYeuBmAPu6U", fileUrl: "", thumbnail: "", description: "" },
-    { id: "v8",  title: "Edit 08", type: "Short", url: "https://www.youtube.com/shorts/U-e73YrPNDI", fileUrl: "", thumbnail: "", description: "" },
-    { id: "v9",  title: "Edit 09", type: "Short", url: "https://www.youtube.com/shorts/KlL7zwRetCQ", fileUrl: "", thumbnail: "", description: "" },
-    { id: "v10", title: "Edit 10", type: "Short", url: "https://www.youtube.com/shorts/JAAD6Q2KH9I", fileUrl: "", thumbnail: "", description: "" }
+    { id: "v5",  title: "Clean or Not", type: "Short", url: "https://www.youtube.com/shorts/pjkjFGyyP8U", fileUrl: "", thumbnail: "", description: "" },
+    { id: "v6",  title: "The GOAT?", type: "Short", url: "https://www.youtube.com/shorts/zt97QLFfoek", fileUrl: "", thumbnail: "", description: "" },
+    { id: "v7",  title: "Didn't Bro Fall?", type: "Short", url: "https://www.youtube.com/shorts/mYeuBmAPu6U", fileUrl: "", thumbnail: "", description: "" },
+    { id: "v8",  title: "The Problem?", type: "Short", url: "https://www.youtube.com/shorts/U-e73YrPNDI", fileUrl: "", thumbnail: "", description: "" },
+    { id: "v9",  title: "Country Edit (collab w/ TVGZ)", type: "Short", url: "https://www.youtube.com/shorts/KlL7zwRetCQ", fileUrl: "", thumbnail: "", description: "" },
+    { id: "v10", title: "Say the Word", type: "Short", url: "https://www.youtube.com/shorts/JAAD6Q2KH9I", fileUrl: "", thumbnail: "", description: "" }
   ],
   // Blender models: in Blender do File → Export → glTF 2.0 (.glb),
   // put the file in assets/models/ and set fileUrl, e.g. "assets/models/stadium.glb"

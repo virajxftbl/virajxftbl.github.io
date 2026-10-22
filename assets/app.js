@@ -495,7 +495,7 @@
   var carouselVideos = [];
 
   function renderCarousel() {
-    carouselVideos = shuffleArray((data.videos || []).slice());
+    carouselVideos = (data.videos || []).slice(); /* keep your order: first video = Edit 01 */
     var track = $id('carousel-track');
     var vc = $id('video-carousel');
     if (vc) vc.classList.toggle('vertical', carouselVideos.length > 0 && carouselVideos.every(function (v) { return isShort(v.url); }));
@@ -781,7 +781,7 @@
   var modelItems = [];
 
   function renderModels() {
-    modelItems = shuffleArray((data.models || []).slice());
+    modelItems = (data.models || []).slice();
     var track = $id('model-track');
     var dots  = $id('model-dots');
     if (!track) return;
