@@ -1,232 +1,178 @@
-window.PORTFOLIO_STORAGE_KEY = "swayam-portfolio-content-v2";
+/* ============================================================
+   virajxftbl — SITE CONTENT
+   Everything on the site comes from this file. Edit text, add
+   links, swap videos, then commit — the site updates itself.
+   Leave a field as "" to hide it.
+   ============================================================ */
 
 window.PORTFOLIO_DEFAULT_CONTENT = {
   profile: {
-    name: "Swayam Kavlekar",
-    brandInitials: "SK",
-    title: "Robotics and AI engineer. Creative technologist. Video editor. CAD designer. Lyricist.",
-    location: "Belgaum, Karnataka, India",
-    email: "swayamk2105@gmail.com",
-    github: "",
+    name: "virajxftbl",
+    brandInitials: "VX",
+    title: "Football edit artist. After Effects × Blender.",
+    location: "Gurugram, India",
+    email: "",       // e.g. "virajxftbl@gmail.com"
+    whatsapp: "",    // e.g. "+91 98xxxxxxxx"
+    instagram: "",   // e.g. "https://instagram.com/virajxftbl"
+    youtube: "https://www.youtube.com/@virajxftbl/shorts",
     linkedin: "",
+    github: "",
     resumeUrl: "",
-    avatarUrl: "",
-    intro: "I build at the point where machine logic meets creative rhythm \u2014 robotics, AI workflows, CAD mechanisms, video edits, lyrics, sport, travel, nature, and everything that keeps curiosity moving.",
-    about: "I am a Robotics and Artificial Intelligence engineering student with a freelance creative practice. My work moves between ROS2 simulations, CAD mechanisms, Python systems, AI-assisted workflows, video editing, graphic design, and writing. The common thread is simple: understand the system, shape the experience, and ship something with taste.",
-    contactLine: "Open for robotics, AI, CAD, video editing, web projects, and creative technology collaborations."
+    logoUrl: "",
+    intro: "Flashy football edits built frame by frame. Beat-synced cuts, velocity, heavy transitions and 3D moments made in Blender, finished in After Effects.",
+    about: "I'm Viraj, the editor behind virajxftbl. I make football edits that hit on every beat: fast cuts, shakes, flashes, colour and 3D scenes that keep people watching to the last frame. I model and animate in Blender, then comp everything in After Effects, so every edit can mix clean 2D motion with custom 3D.",
+    contactLine: "Open for football edits, player highlight edits, fan page content and 3D intros. Send your clips and the vibe you want."
   },
   hero: {
-    eyebrow: "Robotics \u00d7 AI \u00d7 Creative Studio",
-    panelLabel: "Mode",
-    panelValue: "Live",
-    cta1Label: "Explore Work",
-    cta1Href: "#work",
-    cta2Label: "View 3D Lab",
+    eyebrow: "Football × Motion × 3D",
+    panelLabel: "Status",
+    panelValue: "Open for edits",
+    cta1Label: "Watch Edits",
+    cta1Href: "#studio",
+    cta2Label: "Blender Lab",
     cta2Href: "#lab"
   },
   nav: {
-    work:       "Work",
-    lab:        "3D Lab",
-    studio:     "Studio",
-    music:      "Music",
+    work:       "Services",
+    lab:        "Blender",
+    studio:     "Edits",
+    music:      "",
     about:      "About",
-    contactBtn: "Contact"
+    contactBtn: "Hire Me"
   },
   sections: {
     work: {
-      eyebrow: "Selected Work",
-      heading: "Engineering precision with creative instinct.",
-      lead:    "A filterable map of robotics, AI workflows, CAD builds, software experiments, and creative production."
+      eyebrow: "What I Make",
+      heading: "Edits that hit on every beat.",
+      lead:    "Short-form football edits, player highlights and 3D intros, made for Shorts, Reels and TikTok."
     },
     lab: {
-      eyebrow: "3D Lab",
-      heading: "CAD, mechanisms, and physical ideas.",
-      lead:    "Upload GLB/GLTF files in the admin panel to enable interactive 3D preview. Orbit, zoom, and inspect models in the browser."
+      eyebrow: "Blender Lab",
+      heading: "3D scenes, intros and camera moves.",
+      lead:    "Models and scenes built in Blender, then composited into the edits. Drag to orbit, scroll to zoom."
     },
     studio: {
-      eyebrow: "Video Studio",
-      heading: "Motion, rhythm, visual storytelling.",
-      lead:    "Freelance edits, motion rhythm, and visual storytelling \u2014 powered by YouTube embeds and direct video uploads."
+      eyebrow: "Edit Studio",
+      heading: "Motion, rhythm, football.",
+      lead:    "My top 10 edits. Swipe through, tap the front one to play."
     },
-    music: {
-      eyebrow:      "Words & Sound",
-      heading:      "Lyrics, rap drafts, and music drops.",
-      lead:         "A writing wall for verses, hooks, audio snippets, and the inner texture behind the technical work.",
-      tracksLabel:  "Audio Tracks",
-      lyricsLabel:  "Lyrics & Verses"
-    },
+    music: { eyebrow: "", heading: "", lead: "", tracksLabel: "", lyricsLabel: "" },
     about: {
       eyebrow: "About",
-      heading: "Builder, editor, designer, lyricist."
+      heading: "Editor, 3D artist, football head."
     },
     contact: {
       eyebrow: "Contact",
-      heading: "Build systems. Shape stories."
+      heading: "Let's make your edit."
     }
   },
+  // Hide sections you don't use
+  sectionVisibility: { music: false, lyrics: false },
+
   stats: [
-    { label: "CGPA", value: "8.75" },
-    { label: "Freelance", value: "2021+" },
-    { label: "Major", value: "R&AI" },
-    { label: "Mode", value: "Hybrid" }
+    { label: "Top Edits", value: "10" },
+    { label: "Format", value: "9:16" },
+    { label: "Software", value: "AE" },
+    { label: "3D", value: "Blender" }
   ],
   tags: [
-    "Robotics", "Artificial Intelligence", "CAD",
-    "Video Editing", "3D Design", "Rap", "Travel", "Sport"
+    "Football Edits", "After Effects", "Blender", "3D",
+    "Transitions", "Velocity", "Color Grading", "Shorts"
   ],
   marqueeItems: [
-    "Robotics", "Artificial Intelligence", "CAD", "Video Editing",
-    "Hip Hop", "Travel", "Sports", "Nature",
-    "Robotics", "Artificial Intelligence", "CAD", "Video Editing"
+    "Football Edits", "After Effects", "Blender", "Velocity",
+    "Transitions", "3D Intros", "Color Grading", "Beat Sync",
+    "Football Edits", "After Effects", "Blender", "Shorts"
   ],
   skills: [
-    "Fusion 360", "SolidWorks", "Parametric Modelling", "3D Printing",
-    "DFM", "Tolerance", "Assembly",
-    "ROS2", "Gazebo", "RViz", "Mechanism Design",
-    "Python", "C++", "Arduino", "Sensor Integration", "PWM Control",
-    "Prompt Engineering", "AI Workflow Automation",
-    "Video Editing", "Graphic Design"
+    "After Effects", "Blender", "Velocity Edits", "Transitions",
+    "Beat Sync", "Shakes & Flashes", "Color Grading", "Text Animation",
+    "3D Modelling", "3D Animation", "Compositing", "9:16 Shorts", "16:9 YouTube"
   ],
   timeline: [
     {
       id: "t1",
-      title: "B.E. Robotics and Artificial Intelligence",
-      meta: "Maratha Mandal\u2019s Engineering College \u00b7 2022\u20132026",
-      text: "CGPA 8.75/10 with focus on robotics systems, intelligent automation, CAD, and prototyping."
+      title: "virajxftbl on YouTube",
+      meta: "Football edits · Present",
+      text: "Posting flashy football Shorts built in After Effects with 3D from Blender."
     },
     {
       id: "t2",
-      title: "Superintelligence Evangelist Intern",
-      meta: "CHIAC ASI \u00b7 Feb 2026 \u2013 May 2026",
-      text: "Explored transformer architectures, efficient attention, AI automation, experimentation, and technical prototyping."
+      title: "After Effects × Blender workflow",
+      meta: "2D motion + 3D scenes",
+      text: "Model and animate in Blender, render passes, then comp, glow and grade in After Effects."
     },
     {
       id: "t3",
-      title: "Freelance Creative Technologist",
-      meta: "2021 \u2013 Present",
-      text: "Delivered video editing, graphic design, CAD design, digital design, revisions, and client communication."
+      title: "Open for freelance",
+      meta: "2026",
+      text: "Taking on edits for creators, fan pages, players and clubs."
     }
   ],
+  // "Services" section — cards use stills from your own edits
   projects: [
     {
-      id: "autonomous-patrolling-robot",
-      title: "Autonomous Patrolling Robot",
-      category: "Robotics",
-      highlight: "ROS2, Gazebo, waypoint navigation",
-      description: "Developed a simulated mobile robot using ROS2, Gazebo, and navigation frameworks with waypoint navigation and obstacle avoidance concepts.",
-      tools: ["ROS2", "Gazebo", "RViz", "Navigation"],
-      status: "Prototype",
+      id: "football-edits",
+      title: "Football Edits",
+      category: "Edits",
+      highlight: "Beat-synced 9:16 edits for Shorts, Reels and TikTok",
+      description: "High-energy football edits cut to your audio, with transitions, velocity, shakes, flashes and colour grading. Delivered ready to post.",
+      tools: ["After Effects", "Velocity", "Transitions", "Color"],
+      status: "Open",
       featured: true,
-      url: "",
-      thumbnail: ""
+      url: "#studio",
+      cardLink: "See examples",
+      cta: "See the edits",
+      thumbnail: "https://i.ytimg.com/vi/lMsHEEYeM9M/oardefault.jpg"
     },
     {
-      id: "quadruped-robot-design",
-      title: "Quadruped Robot Design",
-      category: "CAD",
-      highlight: "Mechanical structure and constraint analysis",
-      description: "Designed a quadruped robotic structure using CAD tools and analyzed mechanical constraints for form, assembly, and movement planning.",
-      tools: ["CAD", "Mechanism Design", "Assembly"],
-      status: "Design",
+      id: "player-edits",
+      title: "Player Highlight Edits",
+      category: "Edits",
+      highlight: "Edits for players, academies and clubs",
+      description: "Highlight edits for players and teams that want to stand out to followers, scouts and sponsors. Send the match clips, I handle the rest.",
+      tools: ["After Effects", "Highlights", "Text Animation"],
+      status: "Open",
       featured: true,
-      url: "",
-      thumbnail: ""
+      url: "#studio",
+      cardLink: "See examples",
+      cta: "See the edits",
+      thumbnail: "https://i.ytimg.com/vi/b7UxYfAmpKQ/oardefault.jpg"
     },
     {
-      id: "uav-payload-release",
-      title: "Drone Payload Release Mechanism",
-      category: "CAD",
-      highlight: "Servo-actuated UAV payload mechanism",
-      description: "Designed a servo-actuated payload release mechanism for UAV applications with focus on compact actuation and mechanical reliability.",
-      tools: ["CAD", "Servo", "UAV", "Mechanism"],
-      status: "Design",
-      featured: false,
-      url: "",
-      thumbnail: ""
-    },
-    {
-      id: "quiz-platform",
-      title: "Quiz Platform",
-      category: "Software",
-      highlight: "Full-stack quiz automation with admin dashboard",
-      description: "Built a Flask, SQLite, and JavaScript web application that automates quiz generation, evaluation, and performance analytics.",
-      tools: ["Flask", "SQLite", "JavaScript", "Analytics"],
-      status: "Built",
+      id: "3d-intros",
+      title: "3D Intros & Logo Reveals",
+      category: "3D",
+      highlight: "Blender scenes comped in After Effects",
+      description: "Channel intros, logo reveals and 3D title scenes for pages and creators, modelled and animated in Blender and finished in After Effects.",
+      tools: ["Blender", "After Effects", "3D"],
+      status: "Open",
       featured: true,
-      url: "",
-      thumbnail: ""
-    },
-    {
-      id: "smart-expense-analyzer",
-      title: "Smart Expense Analyzer",
-      category: "AI",
-      highlight: "AI-assisted financial analysis",
-      description: "Developed a Python-based intelligent financial analysis system to categorize transactions, detect anomalies, and visualize spending patterns.",
-      tools: ["Python", "AI Workflows", "Dashboards"],
-      status: "Built",
-      featured: true,
-      url: "",
-      thumbnail: ""
-    },
-    {
-      id: "freelance-creative-studio",
-      title: "Freelance Creative Studio",
-      category: "Creative",
-      highlight: "Video edits, graphics, CAD, and digital design",
-      description: "Delivered client work across video editing, graphic design, CAD design, revisions, and end-to-end communication.",
-      tools: ["Video Editing", "Graphic Design", "CAD", "AI Tools"],
-      status: "Ongoing",
-      featured: true,
-      url: "",
-      thumbnail: ""
+      url: "#lab",
+      cardLink: "See 3D work",
+      cta: "Open Blender Lab",
+      thumbnail: "https://i.ytimg.com/vi/3YTwTPXSIdg/oardefault.jpg"
     }
   ],
+  // Your top 10 edits — add a title to each (e.g. "Vini Jr — Sweater Weather")
   videos: [
-    {
-      id: "v1",
-      title: "Client Edit Reel",
-      type: "YouTube",
-      url: "",
-      fileUrl: "",
-      thumbnail: "",
-      description: "Add a YouTube URL or upload a video file from the admin panel."
-    }
+    { id: "v1",  title: "Edit 01", type: "Short", url: "https://www.youtube.com/shorts/b7UxYfAmpKQ", fileUrl: "", thumbnail: "", description: "" },
+    { id: "v2",  title: "Edit 02", type: "Short", url: "https://www.youtube.com/shorts/3YTwTPXSIdg", fileUrl: "", thumbnail: "", description: "" },
+    { id: "v3",  title: "Edit 03", type: "Short", url: "https://www.youtube.com/shorts/opsPd2fpyaY", fileUrl: "", thumbnail: "", description: "" },
+    { id: "v4",  title: "Smooth Operator", type: "Short", url: "https://www.youtube.com/shorts/lMsHEEYeM9M", fileUrl: "", thumbnail: "", description: "" },
+    { id: "v5",  title: "Edit 05", type: "Short", url: "https://www.youtube.com/shorts/pjkjFGyyP8U", fileUrl: "", thumbnail: "", description: "" },
+    { id: "v6",  title: "Edit 06", type: "Short", url: "https://www.youtube.com/shorts/zt97QLFfoek", fileUrl: "", thumbnail: "", description: "" },
+    { id: "v7",  title: "Edit 07", type: "Short", url: "https://www.youtube.com/shorts/mYeuBmAPu6U", fileUrl: "", thumbnail: "", description: "" },
+    { id: "v8",  title: "Edit 08", type: "Short", url: "https://www.youtube.com/shorts/U-e73YrPNDI", fileUrl: "", thumbnail: "", description: "" },
+    { id: "v9",  title: "Edit 09", type: "Short", url: "https://www.youtube.com/shorts/KlL7zwRetCQ", fileUrl: "", thumbnail: "", description: "" },
+    { id: "v10", title: "Edit 10", type: "Short", url: "https://www.youtube.com/shorts/JAAD6Q2KH9I", fileUrl: "", thumbnail: "", description: "" }
   ],
+  // Blender models: in Blender do File → Export → glTF 2.0 (.glb),
+  // put the file in assets/models/ and set fileUrl, e.g. "assets/models/stadium.glb"
   models: [
-    {
-      id: "m1",
-      title: "Quadruped CAD Preview",
-      format: "GLB",
-      url: "",
-      fileUrl: "",
-      thumbnail: "",
-      description: "Upload a GLB/GLTF model file to view it interactively in the browser."
-    },
-    {
-      id: "m2",
-      title: "UAV Payload Mechanism",
-      format: "GLB",
-      url: "",
-      fileUrl: "",
-      thumbnail: "",
-      description: "Upload a GLB/GLTF model file to view it interactively in the browser."
-    }
+    { id: "m1", title: "Blender Scene 01", format: "Blender", url: "", fileUrl: "", thumbnail: "", description: "Export a .glb from Blender to show it here in 3D." },
+    { id: "m2", title: "Blender Scene 02", format: "Blender", url: "", fileUrl: "", thumbnail: "", description: "Export a .glb from Blender to show it here in 3D." }
   ],
-  tracks: [
-    {
-      id: "a1",
-      title: "Unreleased Verse",
-      url: "",
-      fileUrl: "",
-      description: "Upload an MP3 or audio file from the admin panel."
-    }
-  ],
-  lyrics: [
-    {
-      id: "hybrid-frequency",
-      title: "Hybrid Frequency",
-      mood: "Tech \u00d7 Hip Hop",
-      text: "I draft machines in the daylight, verses in the night,\nCircuits in my pocket, whole skyline in sight,\nLogic got a rhythm, rhythm got a plan,\nI build with both hands."
-    }
-  ]
+  tracks: [],
+  lyrics: []
 };

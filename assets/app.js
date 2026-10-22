@@ -5,26 +5,13 @@
 
 (async function () {
 
-  /* ── Supabase ─────────────────────────────────────── */
-  var SUPABASE_URL = 'https://zctfnbiexqzbnjrhgkjq.supabase.co';
-  var SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpjdGZuYmlleHF6Ym5qcmhna2pxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE1NDA0MTUsImV4cCI6MjA5NzExNjQxNX0.N0CLFdvGQ7n0_rqavqZDEmxdC2n7OfJ2EfxQRGhWbMY';
-  var sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+  /* Content comes only from assets/content.js — edit that file to update the site. */
 
   var fallback = window.PORTFOLIO_DEFAULT_CONTENT;
   var data = clone(fallback);
 
   function clone(v) { return JSON.parse(JSON.stringify(v)); }
 
-  async function loadContent() {
-    try {
-      var res = await sb.from('portfolio_data').select('content').eq('id', 1).single();
-      if (res.data && res.data.content) {
-        data = Object.assign(clone(fallback), res.data.content);
-      }
-    } catch (e) { /* use fallback */ }
-  }
-
-  await loadContent();
 
   /* ── Utils ────────────────────────────────────────── */
   function $id(id) { return document.getElementById(id); }
@@ -38,7 +25,9 @@
     var m = String(url).match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/|youtube\.com\/shorts\/)([A-Za-z0-9_-]{6,})/);
     return m ? m[1] : '';
   }
-  function ytThumb(id) { return id ? `https://img.youtube.com/vi/${id}/maxresdefault.jpg` : ''; }
+  function ytThumb(id, vertical) { return id ? 'https://i.ytimg.com/vi/' + id + (vertical ? '/oardefault.jpg' : '/maxresdefault.jpg') : ''; }
+  function isShort(url) { return /youtube\.com\/shorts\//.test(String(url || '')); }
+  var THUMB_FALLBACK = ' onerror="this.onerror=null;this.src=this.src.replace(/(oardefault|maxresdefault)/,\'hqdefault\')"';
 
   /* Parse Instagram post/reel URL → postId (or '' if not IG) */
   function parseIG(url) {
@@ -261,7 +250,7 @@
       if (p.logoUrl) {
         brandLink.innerHTML = '<img src="' + esc(p.logoUrl) + '" alt="Logo" style="width:100%;height:100%;object-fit:contain;border-radius:inherit;" />';
       } else {
-        brandLink.innerHTML = '<span id="brand-text">' + esc(p.brandInitials || 'SK') + '</span>';
+        brandLink.innerHTML = '<span id="brand-text">' + esc(p.brandInitials || 'VX') + '</span>';
       }
     }
 
@@ -301,6 +290,9 @@
     var caEl = $id('contact-actions');
     if (caEl) caEl.innerHTML = [
       p.email      ? '<a class="btn btn-primary" href="mailto:' + esc(p.email) + '">Email Me</a>'       : '',
+      p.whatsapp   ? '<a class="btn btn-primary" target="_blank" rel="noreferrer" href="https://wa.me/' + esc(String(p.whatsapp).replace(/\D/g, '')) + '">WhatsApp</a>' : '',
+      p.instagram  ? '<a class="btn btn-ghost" target="_blank" rel="noreferrer" href="' + esc(p.instagram) + '">Instagram</a>' : '',
+      p.youtube    ? '<a class="btn ' + (p.email || p.whatsapp ? 'btn-ghost' : 'btn-primary') + '" target="_blank" rel="noreferrer" href="' + esc(p.youtube) + '">YouTube</a>' : '',
       p.linkedin   ? '<a class="btn btn-ghost" target="_blank" rel="noreferrer" href="' + esc(p.linkedin) + '">LinkedIn</a>' : '',
       p.github     ? '<a class="btn btn-ghost" target="_blank" rel="noreferrer" href="' + esc(p.github) + '">GitHub</a>'    : '',
       p.resumeUrl  ? '<a class="btn btn-ghost" target="_blank" rel="noreferrer" href="' + esc(p.resumeUrl) + '">Resume</a>' : ''
@@ -383,7 +375,7 @@
         return '<span class="tool-chip">' + esc(t) + '</span>';
       }).join('');
       var thumb = p.thumbnail
-        ? '<img class="slide-thumb" src="' + esc(p.thumbnail) + '" alt="" loading="lazy" />'
+        ? '<img class="slide-thumb" src="' + esc(p.thumbnail) + '" alt="" loading="lazy"' + THUMB_FALLBACK + ' />'
         : '';
       return [
         '<div class="card-wrap" data-animate data-delay="' + ((idx % 3) + 1) + '">',
@@ -396,7 +388,7 @@
         '<h3>' + esc(p.title) + '</h3>',
         '<p class="highlight">' + esc(p.highlight) + '</p>',
         '<div class="tool-row">' + tools + '</div>',
-        p.url ? '<span class="card-link">Open case &#8594;</span>' : '',
+        p.url ? '<span class="card-link">' + esc(p.cardLink || 'Open case') + ' &#8594;</span>' : '',
         '</article>',
         '</div>'
       ].join('');
@@ -448,6 +440,8 @@
     var btnHtml = '';
     if (isStudio) {
       btnHtml = '<a class="btn btn-primary" href="#studio" onclick="document.getElementById(\'project-dialog\').close()">Open Studio Section &#8594;</a>';
+    } else if (p.url && p.url.charAt(0) === '#') {
+      btnHtml = '<a class="btn btn-primary" href="' + esc(p.url) + '" onclick="document.getElementById(\'project-dialog\').close()">' + esc(p.cta || 'See the edits') + ' &#8594;</a>';
     } else if (p.url) {
       btnHtml = '<a class="btn btn-primary" target="_blank" rel="noreferrer" href="' + esc(p.url) + '">Open Project &#8594;</a>';
     }
@@ -503,6 +497,8 @@
   function renderCarousel() {
     carouselVideos = shuffleArray((data.videos || []).slice());
     var track = $id('carousel-track');
+    var vc = $id('video-carousel');
+    if (vc) vc.classList.toggle('vertical', carouselVideos.length > 0 && carouselVideos.every(function (v) { return isShort(v.url); }));
     var dots  = $id('carousel-dots');
     if (!track) return;
 
@@ -514,11 +510,11 @@
     track.innerHTML = carouselVideos.map(function (v, i) {
       var ytId  = parseYT(v.url);
       var igId  = parseIG(v.url);
-      var thumb = v.thumbnail || (ytId ? ytThumb(ytId) : '');
+      var thumb = v.thumbnail || (ytId ? ytThumb(ytId, isShort(v.url)) : '');
       var mediaHtml = '';
 
       if (thumb) {
-        mediaHtml = '<img class="slide-thumb" src="' + esc(thumb) + '" alt="' + esc(v.title) + '" loading="lazy" />';
+        mediaHtml = '<img class="slide-thumb" src="' + esc(thumb) + '" alt="' + esc(v.title) + '" loading="lazy"' + THUMB_FALLBACK + ' />';
       } else if (igId || isIGUrl(v.url)) {
         mediaHtml = '<img class="slide-thumb ig-thumb" data-ig="' + esc(v.url) + '" alt="' + esc(v.title) + '" loading="lazy" />';
       } else {
@@ -605,7 +601,7 @@
 
       var transform, opacity, zIndex, filter;
       /* Width in px (responsive) */
-      var w = Math.min(520, Math.max(260, window.innerWidth * 0.38));
+      var w = slide.offsetWidth || Math.min(520, Math.max(260, window.innerWidth * 0.38));
       var half = w / 2;
 
       if (abs > 2) {
@@ -689,6 +685,12 @@
     // Reset player layout for dynamic aspect ratios
     player.style.aspectRatio = '16/9';
     player.style.width = '100%';
+    var vmInner = document.querySelector('.vm-inner');
+    if (vmInner) vmInner.classList.toggle('vertical', isShort(video.url));
+    if (isShort(video.url)) {
+      player.style.aspectRatio = '9/16';
+      player.style.width = 'min(100%, calc((90vh - 72px) * 9 / 16))';
+    }
 
     if (ytId) {
       vmType = 'youtube';
@@ -957,7 +959,7 @@
       var abs = Math.abs(offset);
 
       var transform, opacity, zIndex, filter;
-      var w = Math.min(520, Math.max(260, window.innerWidth * 0.38));
+      var w = slide.offsetWidth || Math.min(520, Math.max(260, window.innerWidth * 0.38));
 
       if (abs > 2) {
         transform = 'translateX(-50%) scale(0.5)';
@@ -1272,7 +1274,7 @@
   }
 
   /* ── VISITOR TRACKING ────────────────────────────────── */
-  async function trackVisitor() {
+  async function trackVisitor() { return;
     try {
       var visitorId = localStorage.getItem('swym_visitor_id');
       var lastVisit = localStorage.getItem('swym_last_visit');
